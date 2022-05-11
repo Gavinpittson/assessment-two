@@ -23,6 +23,9 @@
 
 //CODE HERE
 
+const greetUser = (username) => console.log(`Welcome back, ${username}`)
+greetUser('Todd')
+
 
 
 
@@ -51,6 +54,17 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
 //CODE HERE
 
+const canWeDeliver = (zipCode) => {
+    if(deliveryAreaZipCodes.includes(zipCode)){
+        console.log(`You're in our delivery zone!`)
+    }else{
+        console.log(`Sorry, we can't deliver to that address`)
+    }
+}
+    
+      
+canWeDeliver(85205555)
+
 
 
 /* 
@@ -71,8 +85,29 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 */
 
 // CODE HERE
+// const canWeDeliverTwo = (zipCode) => {
+//     for(i = 0; i < deliveryAreaZipCodes.length; i++){
+//         if(deliveryAreaZipCodes[i] === zipCode){
+//             console.log(`You're in our delivery zone!`)
+//         }else  {
+            
+//             console.log(`Youdsdsdsdsd're in our delivery zone!`)
+//         }
+//     }
+// }
+// canWeDeliverTwo(85203)
 
+const canWeDeliverTwo = (zipCode) => {
+    for(let i = 0; i < deliveryAreaZipCodes.length; i++){
+        if(deliveryAreaZipCodes[i] === zipCode){
+            return 'a'    
+    }
+    
+}
+    return 'b'
+}
 
+console.log(canWeDeliverTwo(852052))
 //////////////////PROBLEM 3////////////////////
 /* 
     Below is an array of objects that have some
@@ -108,6 +143,8 @@ const deals = [
 
 //CODE HERE
 
+deals[0].title = deals[0].title.replace('10% Off!');
+
 
 
 /*
@@ -124,3 +161,5 @@ const deals = [
 */
 
 //CODE HERE
+
+deals[1].desc = deals[1].desc.trim().replace('March', 'April')
