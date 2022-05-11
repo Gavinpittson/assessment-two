@@ -35,8 +35,8 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
-
+ const summedPrice = cart.reduce((a, c) => a + c.price, 0)
+//console.log(summedPrice)
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -55,7 +55,9 @@ const cart = [
 
 //CODE HERE
 
+const calcFinalPrice = (cartTotal, couponValue, tax) => (cartTotal * (tax + 1)) - couponValue
 
+console.log(calcFinalPrice(1000, 100, .06))
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -79,6 +81,7 @@ const cart = [
 
 /*
     TEXT ANSWER HERE
+    I would include 4 different properties, including: The Customer name ( name: 'name'), the total cost of meal (total : #), the meal ordered (meal: 'meal'), and if they have any allergies ( allergies: boolean)
 
 */
 
@@ -88,3 +91,29 @@ const cart = [
 */
 
 //CODE HERE
+
+
+
+let customer1 = {
+    name: 'Gavin',
+    total: 10.55,
+    meal: 'Sandwich Meal',
+    allergies: true
+}
+
+class Customer {
+    constructor(name, total, meal){
+        this.name = name;
+        this.total = total;
+        this.meal = meal;
+    
+    }
+
+    allergy(){
+        this.allergies = true
+    }
+}
+
+let newCustomer1 = new Customer('Gavin', 10.55, "Sandwich Meal")
+newCustomer1.allergy()
+console.log(newCustomer1)
