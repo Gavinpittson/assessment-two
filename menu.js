@@ -31,6 +31,14 @@
 */
 
 //CODE HERE
+const pizza = {
+    name: 'Pepperoni',
+    price: 5.46,
+    category: 'entree',
+    popularity: 9,
+    rating: 7,
+    tags: ['gluten-free', 'kids', 'vegaterian']
+}
 
 
 
@@ -44,6 +52,9 @@
 
 //CODE HERE
 
+console.log(pizza.popularity)
+
+
 
 /*
     Second, log the second tag in your pizza's
@@ -53,7 +64,7 @@
 */
 
 //CODE HERE
-
+console.log(pizza.tags[1])
 
 /*
     Third, destructure the price off of the
@@ -63,7 +74,7 @@
 */
 
 //CODE HERE
-
+const {price} = pizza
 
 /*
     Fourth, and last, destructure the category
@@ -73,6 +84,9 @@
 */
 
 //CODE HERE
+
+const {category} = pizza
+console.log(category)
 
 
 //////////////////PROBLEM 3////////////////////
@@ -88,6 +102,50 @@
 */
 
 //CODE HERE
+
+let foodArr = [
+    {
+        name: 'Pepperoni',
+        price: 5.99,
+        category: 'entree',
+        popularity: 9,
+        rating: 4,
+        tags: ['gluten-free', 'kids', 'vegaterian']
+    },
+    {
+        name: 'Cheese',
+        price: 5.99,
+        category: 'entree',
+        popularity: 3,
+        rating: 4,
+        tags: ['extra-cheese', 'kids', 'vegaterian']
+    },
+    {
+        name: 'Pepperoni',
+        price: 5.99,
+        category: 'entree',
+        popularity: 3,
+        rating: 4,
+        tags: ['gluten-free', 'kids', 'vegaterian']
+    },
+    {
+        name: 'Pepperoni',
+        price: 5.99,
+        category: 'entree',
+        popularity: 3,
+        rating: 4,
+        tags: ['gluten-free', 'kids', 'vegaterian']
+    },
+    {
+        name: 'Pepperoni',
+        price: 5.99,
+        category: 'entree',
+        popularity: 3,
+        rating: 4,
+        tags: ['extra-sauce', 'kids', 'vegaterian']
+    }
+    
+]
 
 
 
@@ -105,8 +163,8 @@
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
-
+ const filteredFood = foodArr.filter(food => food.tags.includes('gluten-free') )
+//console.log(filteredFood)
 
 
 //////////////////PROBLEM 5////////////////////
@@ -141,14 +199,26 @@
         if it is, return objects whose value for the given
         property is greater than the `number` passed in
 
-        If the type isn't `below`, return objects whose
+        If the type is `below`, return objects whose
         value for the given property is less than the 
-        `number` passed in
+        number passed in
     
     Return the filtered array from the entire function
 */
 
 //CODE HERE
+const filterByProperty = (property, number, type) => {
+    
+    const filteredArr = foodArr.filter(food => {
+        if(type === 'above'){
+            return food[property] > number
+        }else if(type === 'below'){
+            return food[property] < number
+        }
+    })
+    return filteredArr
+}
+    
 
 
 /*
@@ -159,3 +229,4 @@
 */
 
 //CODE HERE
+console.log(filterByProperty('popularity', 8, 'above' ))
