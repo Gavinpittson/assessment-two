@@ -81,7 +81,8 @@ console.log(calcFinalPrice(1000, 100, .06))
 
 /*
     TEXT ANSWER HERE
-    I would include 4 different properties, including: The Customer name ( name: 'name'), the total cost of meal (total : #), the meal ordered (meal: 'meal'), and if they have any allergies ( allergies: boolean)
+    I would include 4 different properties, including: The Customer name ( name: 'name'), the total cost of meal (total : #), the meal ordered (meal: 'meal'), and if they have any allergies ( allergies: boolean). When looking at a customer, obvious information needed 
+    would be name, food, and total while it should be also important to make sure your customer doesnt have any allergies!
 
 */
 
